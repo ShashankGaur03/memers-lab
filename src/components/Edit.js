@@ -20,7 +20,7 @@ export default function Edit(props){
 
     return(
         <div className="edit">
-            <div ref={myRef}>
+            <div className="memebox" ref={myRef}>
             {text.map((e)=>{
                 return (
                 <Draggable key={e.id}>
