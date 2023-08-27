@@ -173,4 +173,7 @@ button{
     width: 60vw;
     height: 60vw;
   }
+  .memebox input{
+    width: 35vw;
+  }
 }
