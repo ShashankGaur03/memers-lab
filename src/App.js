@@ -20,7 +20,7 @@ function App() {
       <Grid container>
       {state===-1 && memes.map((e,i)=>{
         return(
-        <Grid item lg={3} md={4} sm={6} xs={12}>
+        <Grid key={i} item lg={3} md={4} sm={6} xs={12}>
         <Meme
           key={i}
           id={i}

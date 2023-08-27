@@ -129,7 +129,7 @@ button{
 }
 .add{
   width: 125px;
-  margin: 10px 10px 0;
+  margin: 20px 10px 0;
 }
 input{
   position: absolute;
@@ -155,4 +155,14 @@ input{
   width: 50vw;
   display: flex;
   margin-left: 10vw;
+}
+
+@media screen and (max-width: 600px) {
+  .memebox{
+    width: 80vw;
+  }
+  .img-edit{
+    width: 60vw;
+    height: 60vw;
+  }
 }

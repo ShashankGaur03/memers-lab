@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Draggable from "react-draggable";
 import { exportComponentAsJPEG } from "react-component-export-image";
+import { Grid } from "@mui/material";
 
 export default function Edit(props){
     const [text,textfunc] = useState([]);
@@ -38,9 +39,11 @@ export default function Edit(props){
             <img className="img-edit" src={props.url} alt="edit" />
             </div>
             <br />
-            <button className="add" onClick={Add}>Add textbox</button>
-            <button className="btn-edit" onClick={handleClick}>Go back</button>
-            <button className="download" onClick={()=>{exportComponentAsJPEG(myRef)}}>Download</button>
+            <Grid container>
+                <button className="add" onClick={Add}>Add textbox</button>
+                <button className="btn-edit" onClick={handleClick}>Go back</button>
+                <button className="download" onClick={()=>{exportComponentAsJPEG(myRef)}}>Download</button>
+            </Grid>
         </div>
     );
 }
