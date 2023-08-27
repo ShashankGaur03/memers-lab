@@ -9,16 +9,25 @@ import { Grid } from '@mui/material';
 function App() {
   const [state,statefunc] = useState(-1);
   const [memes,setmemes] = useState([]);
+  const [filtered_memes,set_filtered_memes] = useState([])
+
   useEffect(()=>{
     Axios.get("https://api.imgflip.com/get_memes")
-    .then(res=>setmemes(res.data.data.memes));
+    .then(res=>{
+      setmemes(res.data.data.memes)
+      set_filtered_memes(res.data.data.memes)
+    });
   },[])
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar 
+        state={state}
+        memes={memes}
+        set_filtered_memes={set_filtered_memes}
+      />
       <Grid container>
-      {state===-1 && memes.map((e,i)=>{
+      {state===-1 && filtered_memes.map((e,i)=>{
         return(
         <Grid key={i} item lg={3} md={4} sm={6} xs={12}>
         <Meme
